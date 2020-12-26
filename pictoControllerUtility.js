@@ -7,7 +7,6 @@ let codename = ''
     let coachcount = ''
     codename = process.argv[2]
     coachcount = process.argv[3]
-    //codename = process.argv[2]
     var codenamelower = codename.toLowerCase()
     console.log('\x1b[36m%s\x1b[0m', "---- PICTO CONTROLLER UTILITY ----" + '\n')
     console.log("Running..." + '\n')
@@ -23,7 +22,7 @@ var pcHeader = "00000009544558000000002C0000208001000100000118000000208000000000
 
     pictoDir.forEach(pictos => {
     if (pictos.endsWith(".png")) {
-        exec(`%bin\\magick.exe bin\\pictos\\${codename}\\pictos\\` + pictos + ` bin\\pictos\\${codename}\\pictos\\dds\\` + pictos + ".dds", (error, stdout, stderr) => {
+        exec(`bin\\converters\\nvcompress.exe ` + `-bc3` + ` bin\\pictos\\${codename}\\pictos\\` + pictos + ` bin\\pictos\\${codename}\\pictos\\dds\\` + pictos + ".dds", (error, stdout, stderr) => {
             if (error) {
                 console.log(`Error with png2DDS: ${error.message}`);
                 return;

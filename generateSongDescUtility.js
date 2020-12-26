@@ -98,7 +98,7 @@ http.get(base + "songs/" + codename + "/" + codename + ".json", res => {
             "SweatDifficulty": 1,
             "backgroundType": 0,
             "LyricsType": 0,
-            "Tags": ["main"],
+            "Tags": ["Main"],
             "Status": 3,
             "LocaleID": 4294967295,
             "MojoValue": 0,
@@ -115,7 +115,7 @@ http.get(base + "songs/" + codename + "/" + codename + ".json", res => {
         }
     ]
 }
-	fs.writeFileSync("./input/" + codename + "/songdesc.tpl.ckd", JSON.stringify(songdescription))
+	fs.writeFileSync("input/" + codename + "/songdesc.tpl.ckd", JSON.stringify(songdescription))
 
     })
 	console.log("Generated songDesc!" + '\n')

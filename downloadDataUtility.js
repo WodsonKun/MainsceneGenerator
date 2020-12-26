@@ -27,7 +27,7 @@ http.get(base + "songs/" + codename + "/" + codename + ".json", res => {
     })
         res.on("end", () => {
 			console.log("Downloaded base JSON!" + '\n')
-        fs.writeFileSync("./bin/j2d/input.json", JSON.stringify(parsejsonp(data), 2, null))
+        fs.writeFileSync("./bin/j2d/input/input.json", JSON.stringify(parsejsonp(data), 2, null))
 
     })
 })
@@ -41,7 +41,7 @@ if (coachcount == 4) {
         })
             res.on("end", () => {
 				console.log("Downloaded moves0!" + '\n')
-            fs.writeFileSync("./bin/j2d/inputmoves.json", JSON.stringify(parsejsonp(data), 2, null))
+            fs.writeFileSync("./bin/j2d/input/inputmoves.json", JSON.stringify(parsejsonp(data), 2, null))
 
         })
     })
@@ -53,7 +53,7 @@ if (coachcount == 4) {
         })
             res.on("end", () => {
 				console.log("Downloaded moves1!" + '\n')
-            fs.writeFileSync("./bin/j2d/inputmovesp2.json", JSON.stringify(parsejsonp(data), 2, null))
+            fs.writeFileSync("./bin/j2d/input/inputmovesp2.json", JSON.stringify(parsejsonp(data), 2, null))
 
         })
     })
@@ -65,7 +65,7 @@ if (coachcount == 4) {
         })
             res.on("end", () => {
 				console.log("Downloaded moves2!" + '\n')
-            fs.writeFileSync("./bin/j2d/inputmovesp3.json", JSON.stringify(parsejsonp(data), 2, null))
+            fs.writeFileSync("./bin/j2d/input/inputmovesp3.json", JSON.stringify(parsejsonp(data), 2, null))
 
         })
     })
@@ -77,7 +77,7 @@ if (coachcount == 4) {
         })
             res.on("end", () => {
 				console.log("Downloaded moves3!" + '\n')
-            fs.writeFileSync("./bin/j2d/inputmovesp4.json", JSON.stringify(parsejsonp(data), 2, null))
+            fs.writeFileSync("./bin/j2d/input/inputmovesp4.json", JSON.stringify(parsejsonp(data), 2, null))
 
         })
     })
@@ -93,7 +93,7 @@ if (coachcount == 3) {
         })
             res.on("end", () => {
 				console.log("Downloaded moves0!" + '\n')
-            fs.writeFileSync("./bin/j2d/inputmoves.json", JSON.stringify(parsejsonp(data), 2, null))
+            fs.writeFileSync("./bin/j2d/input/inputmoves.json", JSON.stringify(parsejsonp(data), 2, null))
 
         })
     })
@@ -105,7 +105,7 @@ if (coachcount == 3) {
         })
             res.on("end", () => {
 				console.log("Downloaded moves1!" + '\n')
-            fs.writeFileSync("./bin/j2d/inputmovesp2.json", JSON.stringify(parsejsonp(data), 2, null))
+            fs.writeFileSync("./bin/j2d/input/inputmovesp2.json", JSON.stringify(parsejsonp(data), 2, null))
 
         })
     })
@@ -117,7 +117,7 @@ if (coachcount == 3) {
         })
             res.on("end", () => {
 				console.log("Downloaded moves2!" + '\n')
-            fs.writeFileSync("./bin/j2d/inputmovesp3.json", JSON.stringify(parsejsonp(data), 2, null))
+            fs.writeFileSync("./bin/j2d/input/inputmovesp3.json", JSON.stringify(parsejsonp(data), 2, null))
 
         })
     })
@@ -133,7 +133,7 @@ if (coachcount == 2) {
         })
             res.on("end", () => {
 				console.log("Downloaded moves0!" + '\n')
-            fs.writeFileSync("./bin/j2d/inputmoves.json", JSON.stringify(parsejsonp(data), 2, null))
+            fs.writeFileSync("./bin/j2d/input/inputmoves.json", JSON.stringify(parsejsonp(data), 2, null))
 
         })
     })
@@ -145,7 +145,7 @@ if (coachcount == 2) {
         })
             res.on("end", () => {
 				console.log("Downloaded moves1!" + '\n')
-            fs.writeFileSync("./bin/j2d/inputmovesp2.json", JSON.stringify(parsejsonp(data), 2, null))
+            fs.writeFileSync("./bin/j2d/input/inputmovesp2.json", JSON.stringify(parsejsonp(data), 2, null))
 
         })
     })
@@ -161,7 +161,7 @@ if (coachcount == 1) {
         })
             res.on("end", () => {
 			console.log("Downloaded moves0!" + '\n')
-            fs.writeFileSync("./bin/j2d/inputmoves.json", JSON.stringify(parsejsonp(data), 2, null))
+            fs.writeFileSync("./bin/j2d/input/inputmoves.json", JSON.stringify(parsejsonp(data), 2, null))
 
         })
     })

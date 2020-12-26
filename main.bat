@@ -3,8 +3,8 @@ SetLocal EnableDelayedExpansion
 $global:ProgressPreference = 'SilentlyContinue'
 
 @echo off
-SET version=1.2.0
-TITLE jdSongCreator by Yunyl (%version%)
+SET version=1.0.0b
+TITLE Mainscene Generator (v%version%)
 mode con: cols=84 lines=32
 color 0D
 goto :startScreen
@@ -12,7 +12,8 @@ goto :startScreen
 
 :startScreen
 echo.
-echo Welcome to jdSongCreator by Yunyl (%version%).
+echo Welcome to Mainscene Generator by WodsonKun (v%version%).
+echo Thanks to yunyl and mishok!
 echo.
 SET /p _UpperCodename="Please enter the codename for the song you would like to convert: "
 SET /p CoachCount="Please enter coachCount for the song: "
@@ -130,11 +131,11 @@ REM download song data
 node downloadDataUtility.js %_UpperCodename% %CoachCount%
 REM run j2d
 echo.
-echo Running JSON to DTAPE (credits to Felix)
+echo Running JSON to DTAPE
 
-node bin\j2d\j2d.js|rem
+mkdir input\%_UpperCodename%\
+py bin\j2d\main.py "%_UpperCodename%"
 REM move dtape ktape and musictrack to mainscene creators folder
-robocopy output\%_UpperCodename%\ input\%_UpperCodename% /MOVE  /NFL /NDL /NJH /NJS /nc /ns /np 2>NUL|rem
 @RD /s /q "output" 2>NUL
 REM copypaste placeholder textures !
 xcopy /s bin\textures input\%_UpperCodename%\textures\ /Y|rem
@@ -144,14 +145,12 @@ node texturesRenameUtility.js %_UpperCodename% %CoachCount%
 
 REM pictos
 echo.
-echo Preparing pictos (credits to Pashtet)
+echo Preparing pictos...
 echo.
 mkdir bin\pictos\%_UpperCodename%\pictos\dds
 mkdir bin\pictos\%_UpperCodename%\pictos\ckd
 
 python bin\pictocutter\pictocutter.py %_UpperCodename%
-
-robocopy picto_output\%_UpperCodename%\ bin\pictos\%_UpperCodename%\pictos /MOVE /NFL /NDL /NJH /NJS /nc /ns /np 2>NUL
 
 node pictoControllerUtility.js %_UpperCodename%
 node pictoControllerUtility_alt.js %_UpperCodename%
@@ -234,10 +233,16 @@ node generateIPKUtility.js %_UpperCodename%
 goto :finishedPage
 
 :finishedPage
+del bin\j2d\input\input.json
+del bin\j2d\input\inputmoves.json
+del bin\j2d\input\inputmovesp2.json
+del bin\j2d\input\inputmovesp3.json
+del bin\j2d\input\inputmovesp4.json
 echo.
 echo.
 echo Congratulations! You have created a mainscene IPK for %_UpperCodename%
-echo Please contact Yunyl for any kind of issues!
+echo Please contact me on Discord if you have any kind of issue with this tool!
+echo WodsonKun#5972
 echo.
 echo.
 pause
